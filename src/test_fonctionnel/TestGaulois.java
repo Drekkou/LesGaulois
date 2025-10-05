@@ -16,6 +16,9 @@ public class TestGaulois {
 		panoramix.boosterGaulois(obelix);
 		panoramix.boosterGaulois(asterix);
 
+		for (int i = 0; i < 3; i++) {
+			asterix.frapper(brutus);
+		}
 	}
 
 }
