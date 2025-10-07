@@ -76,7 +76,7 @@ public class Romain {
 	}
 
 	public static void main(String[] args) {
-		Romain minus = new Romain("Minus", 6);
+		Romain minus = new Romain("Minus", 4);
 
 		Equipement casque = Equipement.CASQUE;
 		Equipement bouclier = Equipement.BOUCLIER;
