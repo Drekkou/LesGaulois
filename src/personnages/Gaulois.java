@@ -29,7 +29,7 @@ public class Gaulois {
 		return nom;
 	}
 
-	public void frapper(romain romain) {
+	public void frapper(Romain romain) {
 
 		String nomRomain = romain.getNom();
 		System.out.println(nom + "envoie un grand coup dans la machoire de " + nomRomain);
