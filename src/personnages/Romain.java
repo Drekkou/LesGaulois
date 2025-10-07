@@ -50,43 +50,40 @@ public class Romain {
 	}
 
 	private void equipeLe(Equipement equipement) {
-
 		this.equipements[this.nbEquipements] = equipement;
 		this.nbEquipements++;
-		System.out.println("Le soldat " + this.nom + "s'équipe avec un " + equipement.toString() + "!");
-	}
-
-	private void equipeEquipement(Equipement equipement) {
-		if (this.nbEquipements == 0) {
-			this.equipeLe(equipement);
-		} else if (this.equipements[0] == equipement) {
-			System.out.println("Le soldat " + this.nom + " possède deja un " + equipement.toString() + " !");
-		} else {
-			this.equipeLe(equipement);
-		}
+		System.out.println("Le soldat " + this.nom + " s'équipe avec un " + equipement.toString() + "!");
 	}
 
 	public void sEquiper(Equipement equipement) {
 		switch (this.nbEquipements) {
-		case 0: {
-			this.equipeEquipement(equipement);
-		}
+		case 0:
 		case 1: {
-			this.equipeEquipement(equipement);
-		}
-		case 2: {
-			System.out.println("Le soldat " + this.nom + " est déjà bien protégé !");
+			if (this.nbEquipements == 0) {
+				this.equipeLe(equipement);
+			} else if (this.equipements[0] == equipement) {
+				System.out.println("Le soldat " + this.nom + " possède deja un " + equipement.toString() + " !");
+			} else {
+				this.equipeLe(equipement);
+			}
+			break;
 		}
 		default:
-			throw new IllegalArgumentException("Unexpected value: " + this.equipements);
+			System.out.println("Le soldat " + this.nom + " est déjà bien protégé !");
+			break;
 		}
+
 	}
 
 	public static void main(String[] args) {
-		Romain minus = new Romain("Minus", 6);
+		Romain minus = new Romain("Minus", 7);
 
 		Equipement casque = Equipement.CASQUE;
 		Equipement bouclier = Equipement.BOUCLIER;
 
+		minus.sEquiper(casque);
+		minus.sEquiper(casque);
+		minus.sEquiper(bouclier);
+		minus.sEquiper(casque);
 	}
 }
