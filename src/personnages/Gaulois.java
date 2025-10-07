@@ -4,6 +4,7 @@ public class Gaulois {
 	private String nom;
 	private int force;
 	private int effetPotion = 1;
+	private Village village;
 
 	public Gaulois(String nom, int force) {
 		super();
@@ -46,5 +47,19 @@ public class Gaulois {
 
 	public void boirePotion(int forcePotion) {
 		this.effetPotion = forcePotion;
+	}
+
+	public void setVillage(Village village) {
+		this.village = village;
+	}
+
+	public void sePresenter() {
+		if (village == null) {
+			parler("Bonjour, je m'appelle Doublepolémix. Je voyage de villages en villages.");
+		} else if (village.getChef().nom == this.nom) {
+			parler("Bonjour, je m'appelle Abraracourcix. Je suis le chef le village Village des Irreductibles.");
+		} else if (village != null) {
+			parler("Bonjour, je m'appelle Astérix. J'habite le village Village des Irreductibles.");
+		}
 	}
 }
